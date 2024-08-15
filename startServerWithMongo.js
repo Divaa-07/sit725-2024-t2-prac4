@@ -2,7 +2,7 @@ let express = require('express');
 let app = express();
 const { MongoClient, ServerApiVersion } = require('mongodb');
 // const uri = "mongodb://localhost:27017";
-const uri = "mongodb+srv://faisalalam:w7dwNuoISsPyESk8@cluster0.gngbcep.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+const uri = "mongodb+srv://divyangalokuhetti04:p3QELfk2RtATE79v@cluster0.0kzem.mongodb.net/?retryWrites=true&w=majority&appName=Cluster"
 let port = process.env.port || 3000;
 let collection;
 
@@ -41,17 +41,17 @@ app.get('/api/cats', (req,res) => {
     });
 });
 
-app.post('/api/cat', (req,res)=>{
+app.post('/api/cart', (req,res)=>{
     let cat = req.body;
-    postCat(cat, (err, result) => {
+    postCart(cat, (err, result) => {
         if (!err) {
             res.json({statusCode:201, data:result, message:'success'});
         }
     });
 });
 
-function postCat(cat,callback) {
-    collection.insertOne(cat,callback);
+function postCart(cat,callback) {
+    collection.insertOne(cart,callback);
 }
 
 function getAllCats(callback){

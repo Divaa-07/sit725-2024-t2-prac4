@@ -23,14 +23,14 @@ const formSubmitted = () => {
     postCat(formData);
 }
 
-function postCat(cat){
+function postCart(cart){
     $.ajax({
-        url:'/api/cat',
+        url:'/api/cart',
         type:'POST',
-        data:cat,
+        data:cart,
         success: (result)=>{
             if (result.statusCode === 201) {
-                alert('cat post successful');
+                alert('cart post successful');
             }
         }
     });
